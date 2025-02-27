@@ -23,6 +23,9 @@ app.use(cookieParser());
 
 // Serve frontend static files from the "build" directory
 // Serve frontend static files from the "frontend/build" directory
+app.use('/', indexRouter);
+app.use('/', usersRouter);
+
 
 const frontendPath = path.join(__dirname, "../frontend/build");
 console.log("Serving static files from:", frontendPath);
@@ -41,9 +44,6 @@ app.get("*", (req, res) => {
 
 
 // API Routes
-app.use('/api', indexRouter);
-app.use('/api/users', usersRouter);
-
 
 
 

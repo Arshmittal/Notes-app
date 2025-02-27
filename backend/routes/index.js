@@ -13,8 +13,8 @@ const e = require('express');
 let secret = "secret";
 
 /* GET home page. */
-router.get('/', function (req, res, next) {
-  res.render('index', { title: 'Express' });
+router.get("/", (req, res) => {
+  res.json({ message: "API is working!" });
 });
 
 router.post("/signUp", async (req, res) => {
